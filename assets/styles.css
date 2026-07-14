@@ -1,0 +1,206 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 1rem;
+    font-weight: normal;
+    cursor: default;
+    user-select: none;
+}
+
+:root {
+    --brand--color-1: #ff0000;
+    --brand--color-2: #ffffff;
+    --brand--color-3: #000000;
+    --brand--color-4: brown;
+}
+
+@font-face {
+    font-family: "Ubuntu-Regular";
+    src: url(Ubuntu-Regular.ttf);
+}
+
+html {
+    height: 100vh;
+}
+
+body {
+    min-height: 100%;
+    font-family: Ubuntu-Regular, serif;
+    background-image: url('diagonal_noise.png');
+}
+
+a {
+    color: var(--brand--color-4);
+}
+
+a:hover {
+    cursor: pointer;
+    color: var(--brand--color-1);
+}
+
+p {
+    margin: 0 0 1rem 0;
+}
+
+h1 {
+    font-size: 2rem;
+    margin: 0 0 0.5rem 0;
+}
+
+p {
+    line-height: 20px;
+    text-indent: 20px;
+}
+
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+#wrapper {
+    position: relative;
+    max-width: 1024px;
+    padding: 30px 0;
+    margin: 0 auto;
+}
+
+#triangle {
+    position: absolute;
+    top: 20px;
+    width: 0;
+    height: 0;
+    border-left: 240px solid transparent;
+    border-right: 240px solid transparent;
+    border-bottom: 260px solid var(--brand--color-2);
+    z-index: -1;
+}
+
+#popover {
+    border: 1px solid var(--brand--color-1);
+    background-color: var(--brand--color-2);
+    color: var(--brand--color-1);
+    padding: 10px 20px;
+    margin-inline: auto;
+    position: absolute;
+    top: 90px;
+}
+
+#gear {
+    animation: 10s linear infinite spin;
+    animation-play-state: paused;
+}
+
+#gear:hover {
+    animation-duration: 3s;
+}
+
+#gear circle,
+#gear path,
+#gear {
+    pointer-events: all;
+    cursor: pointer;
+}
+
+@keyframes spin {
+    0%   { transform: translate(50px,50px) rotate(0deg); }
+    100% { transform: translate(50px,50px) rotate(360deg); }
+}
+
+#title {
+    margin: 20px auto;
+    text-align: center;
+}
+
+#lang-wrapper {
+    position: absolute;
+    top: 40px;
+    right: 60px;
+    border-radius: 5%;
+    border: 1px solid var(--brand--color-3);
+}
+
+#lang-menu {
+    cursor: pointer;
+}
+
+#container {
+    display: flex;
+    flex-direction: row;
+    margin: 20px 0 0 0;
+}
+
+#container > * {
+    flex: auto;
+}
+
+article {
+    min-width: 60%;
+}
+
+article * {
+    user-select: text;
+}
+
+article p {
+    text-align: justify;
+}
+
+strong {
+    font-weight: bold;
+}
+
+.fadeOutText {
+    transition: opacity 3s linear;
+    opacity: 1;
+}
+
+fieldset {
+    border: 1px solid var(--brand--color-3);
+    margin: 10px 15px;
+    padding: 30px;
+    min-width: 20%;
+    background-color: var(--brand--color-2);
+}
+
+legend {
+    background-color: var(--brand--color-3);
+    color: var(--brand--color-2);
+    padding: 3px 6px;
+    text-align: center;
+    margin: 0 auto;
+}
+
+ul {
+    padding: 0 0 0 20px;
+}
+
+@media (max-width: 768px) {
+    #container {
+        flex-direction: column;
+    }
+
+    h1 {
+        font-size: 1.5rem;
+        margin: 0 0 0.5rem 0;
+    }
+
+    #triangle {
+        position: absolute;
+        top: 20px;
+        width: 0;
+        height: 0;
+        border-left: 150px solid transparent;
+        border-right: 150px solid transparent;
+        border-bottom: 270px solid var(--brand--color-2);
+        z-index: -1;
+    }
+
+    #motto {
+        width: 180px;
+        display: block;
+    }
+}
